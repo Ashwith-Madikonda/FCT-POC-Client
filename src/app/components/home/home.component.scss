@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    .header{
+        height: 7vh;
+        background-color: #304a65;
+        color: white;
+    }
+    .body{
+    display: flex;
+    flex-direction: row;
+        .nav-bar{
+        width: 20vw;
+        height: 90vh;
+        background-color: #ebeff4;
+        .side-nav-items{
+            padding: 10px;
+            height: 30px;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+        }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { StatsComponent } from '../stats/stats.component';
 
@@ -14,6 +14,21 @@ import { StatsComponent } from '../stats/stats.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent {
 
+  constructor(
+    private readonly router: Router) { }
+
+  showProfileMenu = false;
+
+  ProfileMenuAction(){
+    this.showProfileMenu = !this.showProfileMenu;
+  }
+  navigate(route: string){
+    if(route == 'Dashboard')
+    this.router.navigate(["fct/dashboard"]);
+    if(route == 'Statistics')
+      this.router.navigate(["fct/stats"]);
+  }
 }

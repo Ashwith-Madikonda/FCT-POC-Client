@@ -1,2 +1,15 @@
-<p>home works!</p>
-<router-outlet></router-outlet>
+<div class="container">
+
+<div class="header">
+    FCT
+    <i class="bi bi-person" (click)="ProfileMenuAction()">signout</i>
+</div>
+<div class="body">
+    <div class="nav-bar">
+        <div class="side-nav-items" (click)="navigate('Dashboard')">Dashboard</div>
+        <div class="side-nav-items" (click)="navigate('Statistics')">Statistics</div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+</div>
