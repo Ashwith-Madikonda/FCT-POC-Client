@@ -15,9 +15,10 @@ export default class AppAuthService {
         this.http
             .post<any>("https://localhost:44347/login", auth,{observe: 'response'})
             .subscribe((result: any) => {
-                //debugger
-                // if (!result || !result.token) return;
-                // localStorage.setItem("token", result.token);
+                console.log(result);
+                if (!result || !result.body.token) return;
+                localStorage.setItem("token", result.body.token);
+                debugger
                 this.router.navigate(["/fct"]);
             });
     }

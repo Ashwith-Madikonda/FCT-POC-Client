@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { StatsComponent } from '../stats/stats.component';
+import { CommonModule } from '@angular/common';
+import AppAuthService from '../../../services/auth.service';
+import UserService from '../../../services/user.service';
+import User from '../../models/user';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     RouterModule,
+    CommonModule,
     DashboardComponent,
     StatsComponent
   ],
@@ -17,9 +22,10 @@ import { StatsComponent } from '../stats/stats.component';
 
 export class HomeComponent {
 
-  constructor(
+  constructor(private readonly appAuthService: AppAuthService,
+    private userService : UserService,
     private readonly router: Router) { }
-
+     user: User | undefined;
   showProfileMenu = false;
 
   ProfileMenuAction(){
@@ -30,5 +36,16 @@ export class HomeComponent {
     this.router.navigate(["fct/dashboard"]);
     if(route == 'Statistics')
       this.router.navigate(["fct/stats"]);
+  }
+  signOut(){
+    this.appAuthService.signout();
+  }
+
+  ngOnInit(){
+    this.userService.get().subscribe((res) => {
+      if(res) {
+        this.user = res;
+      }
+    })
   }
 }

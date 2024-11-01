@@ -1,0 +1,20 @@
+.statistisc{
+    .row{
+        min-height: 60px;
+        margin-top: 10px;
+        color: white;
+        line-height: 50px;
+    }
+    .row1{
+        background-color: #195383;
+        padding-left: 45%;
+    }
+    
+    .row2{
+        background-color: white;
+        color: black;
+        .charts{
+            margin-top: 10px;
+        }
+    }
+}

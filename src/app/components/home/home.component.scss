@@ -1,12 +1,45 @@
 .container{
     display: flex;
     flex-direction: column;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0 ;
+    width: 130%;
     .header{
-        height: 7vh;
+        height: 60px;
+        width: 100vw;
         background-color: #304a65;
         color: white;
+        display: flex;
+        .name{
+            width: 40%;
+            line-height: 4;
+            padding-left: 30%;
+        }
+        .logo{
+            width: 50%;
+            align-items: flex-start;
+            padding-left: 6%;
+            line-height: 2;
+            font-size: 30px;
+        }
+        .profile{
+            width: 10%;
+            line-height: 4;
+            .profile-menu{
+                width: 120px;
+                margin-left: -80px;
+                height: 50px;
+                background-color: #e8ebec;
+                color: black;
+                position: absolute;
+                z-index: 1;
+                line-height: 3;
+                padding-left: 20px;
+            }
+        }
     }
     .body{
+    width: 100vw;
     display: flex;
     flex-direction: row;
         .nav-bar{
@@ -15,11 +48,16 @@
         background-color: #ebeff4;
         .side-nav-items{
             padding: 10px;
-            height: 30px;
+            height: 60px;
             cursor: pointer;
             text-align: center;
             justify-content: center;
+            background-color: #e8ebec;
         }
+        }
+        .components{
+            width: 120%;
+            padding: 1% 2% 2% 2%;
         }
     }
 }

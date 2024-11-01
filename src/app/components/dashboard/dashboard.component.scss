@@ -1,0 +1,36 @@
+.dashboard{
+    .row{
+        min-height: 60px;
+        margin-top: 10px;
+        color: white;
+        line-height: 50px;
+    }
+    .row1{
+        background-color: #195383;
+        padding-left: 45%;
+        width: 100%;
+    }
+    .row2{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .incidents{
+            background-color: #195383;
+            width: 30%;
+        }
+        .projects{
+            background-color: #195383;
+            width: 30%;
+
+        }
+        .endpoints{
+            background-color: #195383;
+            width: 30%;
+
+        }
+    }
+    .row3{
+        background-color: white;
+        color: black;
+    }
+}
